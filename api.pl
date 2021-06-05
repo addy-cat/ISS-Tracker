@@ -40,6 +40,7 @@ print "Latitude: ", $lat."\n", "Longitude: ", $lon."\n\n";
 
 
 #Calculate how far user is from the ISS
+print "Lets calculate how far you are away from the ISS.\n";
 print "Enter your latitude: \n";
 my $entered_lat = <>;
 chomp($entered_lat);
@@ -57,30 +58,6 @@ my $calculation = 0.5 - cos((($entered_lat - $lat) * $pi_div_180))/2 +
                   (1 - cos((($entered_lon - $lon) * $pi_div_180)))/2;
 my $distance = 12742 * sqrt($calculation);
 print "You are ", $distance, " kilometers away from the ISS.\n";
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
