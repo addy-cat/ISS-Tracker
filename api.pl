@@ -52,10 +52,12 @@ print "Your longitude is: ", $entered_lon, "\n";
 
 print "Calculating...\n";
 
+#Haversine formula used for finding the distance between two lat/lon points. Math does this over a sphere and not a straight line.
 my $pi_div_180 = 0.01745329251;
 my $calculation = 0.5 - cos((($entered_lat - $lat) * $pi_div_180))/2 + 
                   cos(($lat * $pi_div_180)) * cos(($entered_lat)) * 
                   (1 - cos((($entered_lon - $lon) * $pi_div_180)))/2;
+#The radius of the Earth in km is 6371. Multiply by 2 to get 12742.
 my $distance = 12742 * sqrt($calculation);
 print "You are ", $distance, " kilometers away from the ISS.\n";
 
