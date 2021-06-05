@@ -52,10 +52,10 @@ print "Your longitude is: ", $entered_lon, "\n";
 print "Calculating...\n";
 
 my $pi_div_180 = 0.01745329251;
-my $hi = 0.5 - cos((($entered_lat - $lat) * $pi_div_180))/2 + 
+my $calculation = 0.5 - cos((($entered_lat - $lat) * $pi_div_180))/2 + 
                   cos(($lat * $pi_div_180)) * cos(($entered_lat)) * 
                   (1 - cos((($entered_lon - $lon) * $pi_div_180)))/2;
-my $distance = 12742 * sqrt($hi);
+my $distance = 12742 * sqrt($calculation);
 print "You are ", $distance, " kilometers away from the ISS.\n";
  
 
